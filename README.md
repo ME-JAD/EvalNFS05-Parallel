@@ -10,6 +10,8 @@
 - Un affichage de l'at du coffre fort est placé dans la console toutes les 5 secondes.
 
 ## Diagramme de classe de la solution de départ
+![Diagramme de classe](https://github.com/Jean-Aymeric/EvalNFS05-Parallel/blob/master/ClassDiagram.png)
 
 ## Travail demandé
 - Réaliser un programme en utilisant les threads permettant de craquer le coffre fort
+- Il y a plusieurs possibilités, cependant vous ne devez pas avoir plus de 1000 threads en même temps quelque soit votre manière de faire.
