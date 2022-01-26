@@ -31,7 +31,13 @@ public class StrongBox {
     }
 
     public State getState() {
-        return state;
+        for (int i = 0; i < this.countCodes(); i++) {
+            if (this.codes[i].getState() == State.Close) {
+                return State.Close;
+            }
+        }
+
+        return State.Open;
     }
 
     public State getStateFromCodeByIndex(int codeIndex) {

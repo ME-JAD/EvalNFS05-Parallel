@@ -19,12 +19,20 @@ public final class StrongBoxView implements Runnable {
 
     private void printStrongBox() {
         int nbOpenedCodes = 0;
+        int nbClosedCodes = 0;
         for (int codeIndex = 0; codeIndex < this.strongBox.countCodes(); codeIndex++) {
-            if (this.strongBox.getStateFromCodeByIndex(codeIndex) == State.Open) {
-                nbOpenedCodes++;
+            switch (this.strongBox.getStateFromCodeByIndex(codeIndex)) {
+                case Open:
+                    nbOpenedCodes++;
+                    break;
+                case Close:
+                    nbClosedCodes++;
+                    break;
             }
         }
-        System.out.println("StrongBox : [" + nbOpenedCodes + "] opened - [" + (this.strongBox.countCodes() - nbOpenedCodes) + "] closed");
+        System.out.println("StrongBox : [" + nbOpenedCodes + "] opened - [" +
+                nbClosedCodes + "] closed - [" +
+                (this.strongBox.countCodes() - nbOpenedCodes - nbClosedCodes) + "] locked");
     }
 
     @Override

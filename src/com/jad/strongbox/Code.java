@@ -18,11 +18,24 @@ class Code {
     }
 
     public State tryKey(final String key) {
+        if (this.state == State.Open) {
+            this.state = State.Lock;
+        }
+        if (this.state == State.Lock) {
+            return State.Lock;
+        }
         return this.key.equals(key) ? State.Open: State.Close;
     }
 
     public State open(final String key) {
-        this.state = this.tryKey(key);
+        if (this.state == State.Lock) {
+            return State.Lock;
+        }
+        if (this.tryKey(key) == State.Close) {
+            this.state = State.Lock;
+        } else {
+            this.state = State.Open;
+        }
         return this.state;
     }
 }
