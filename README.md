@@ -10,7 +10,7 @@
 - Un affichage de l'état du coffre-fort est placé dans la console toutes les 5 secondes.
 
 ## Diagramme de classe de la solution de départ
-![Diagramme de classe](https://github.com/Jean-Aymeric/EvalNFS05-Parallel/blob/master/ClassDiagram.png)
+![Diagramme de classe](https://github.com/Jean-Aymeric/EvalNFS05-Parallel/blob/master/StrongBox.png)
 
 ## Programme d'exemple
 Dans le main, il y a un programme d'exemple qui teste toutes les combinaisons à l'aide de deux boucles for imbriquées. Cet exemple ne fait absolument pas appel aux threads.
