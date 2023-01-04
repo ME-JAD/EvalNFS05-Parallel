@@ -3,6 +3,9 @@ package com.jad.view;
 import com.jad.strongbox.State;
 import com.jad.strongbox.StrongBox;
 
+/**
+ * The type Strong box view.
+ */
 public final class StrongBoxView implements Runnable {
     private final StrongBox strongBox;
     private final int delayInMilliseconds;
@@ -12,6 +15,12 @@ public final class StrongBoxView implements Runnable {
         this.delayInMilliseconds = delayInMilliseconds;
     }
 
+    /**
+     * Display the count of opened, closed and locked codes.
+     *
+     * @param strongBox           the strong box
+     * @param delayInMilliseconds the delay in milliseconds
+     */
     public static void display(final StrongBox strongBox, int delayInMilliseconds) {
         Thread thread = new Thread(new StrongBoxView(strongBox, delayInMilliseconds));
         thread.start();
@@ -37,7 +46,7 @@ public final class StrongBoxView implements Runnable {
 
     @Override
     public void run() {
-        while(this.strongBox.getState() != State.Open) {
+        while (this.strongBox.getState() != State.Open) {
             this.printStrongBox();
             try {
                 Thread.sleep(this.delayInMilliseconds);
@@ -45,5 +54,6 @@ public final class StrongBoxView implements Runnable {
                 e.printStackTrace();
             }
         }
+        this.printStrongBox();
     }
 }

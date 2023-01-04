@@ -1,5 +1,19 @@
 package com.jad.strongbox;
 
+/**
+ * The enum State.
+ */
 public enum State {
-    Open, Close, Lock
+    /**
+     * Open state.
+     */
+    Open,
+    /**
+     * Close state.
+     */
+    Close,
+    /**
+     * Lock state.
+     */
+    Lock
 }
