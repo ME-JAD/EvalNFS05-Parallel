@@ -6,6 +6,7 @@
 - Chaque clé peut être testée de manière individuelle en lui envoyant une chaine de caractère.
 - Chaque clé peut être ouverte de manière individuelle en lui envoyant une chaine de caractère.
 - Si une ouverture de clé est faite avec une mauvaise clé, la clé se bloque définitivement.
+- Si un test est fait sur une clé déjà ouverte, la clé se bloque définitivement, même s'il s'agit de la bonne chaine de caractère.
 - Si une ouverture est faite sur une clé déjà ouverte, la clé se bloque définitivement, même s'il s'agit de la bonne chaine de caractère.
 - Un affichage de l'état du coffre-fort est placé dans la console toutes les 5 secondes.
 
